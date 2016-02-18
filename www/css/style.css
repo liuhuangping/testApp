@@ -1,0 +1,136 @@
+/* Empty. Add your own CSS if you like */
+body{
+  font-family:"华文细黑","Microsoft YaHei";
+}
+.view{
+  background:#F3F3F3;
+}
+.bar-red{
+  background-color:#C60019;
+  color:#fff;
+  background-image:none;
+}
+.position-r{
+  position:relative;
+}
+.no-padding{padding:0 !important}
+.button-information{
+  width:24px;
+  height:24px;
+  background:url(../img/yanzheng07@2x.png) no-repeat center center;
+  background-size:24px;
+  border-width:0;
+  margin-right:5px;
+}
+.con-top{
+  width:100%;
+  height:180px;
+  background:url(../img/background.jpg) repeat-x;
+  background-size:180px;
+  text-align:center;
+  position:relative;
+}
+.con-top-logo{
+  width:110px;
+  height:110px;
+}
+.logo-font{
+  margin-top:5px;
+  font-size:20px;
+  font-family:"Microsoft YaHei";
+}
+.logo-sub-font{
+  width:70%;
+  height:auto;
+}
+.font-white{
+  color:#ffffff;
+}
+.icon-local{
+  height:43px;
+  background:url(../img/position@2x.png) no-repeat 5px center;
+  background-size:32px;
+  border-width:0;
+  border-bottom:1px solid #ededed;
+  padding:5px 10px 5px 40px;
+}
+.icon-info{
+  height:43px;
+  background:url(../img/list2@2x.png) no-repeat 9px center;
+  background-size:24px;
+  border-width:0;
+  border-bottom:1px solid #ededed;
+  padding:5px 10px 5px 40px;
+}
+.icon-local p{
+  margin:0;
+  padding:0;
+}
+.item .list-title{
+  float:left;
+  font-size:14px;
+  color:#333;
+}
+.list,.list2{
+  background:#fff;
+  margin-bottom:5px;
+  border-top:1px solid #ededed;
+}
+.list2 .item .list-title{
+  font-size:14px;
+  color:#333;
+  line-height:30px;
+  padding:0;
+}
+.item .list-sub-title{
+  font-size:0.65em;
+  color:#777;
+  clear:both;
+  margin-top:-4px;
+}
+.item .list-date{
+  float:right;
+  font-size:11px;
+  color:#999;
+}
+.cirle{
+  font-size:14px;
+  width:60px;
+  height:60px;
+  background:#e64647;
+  color:#fff;
+  line-height:53px;
+  text-align:center;
+  display:inline-block;
+  border-radius:50%;
+  padding:5px;
+}
+.jb-list{
+  padding:10px 0;
+}
+.jb-list li{
+  float:left;
+  width:33.333%;
+  text-align:center;
+  border-right:1px solid #ededed;
+}
+.jb-list li:last-child{
+  border-width:0px;
+}
+.jb-title{
+  font-size:14px;
+  cololr:#333;
+}
+.jb-sub-title{
+  font-size:0.65em;
+  color:#777;
+}
+.clear{
+  clear:both;
+}
+
+
+.tabs-bg .tabs{
+  background:#fff;
+  border-top:1px solid #ededed !important;
+}
