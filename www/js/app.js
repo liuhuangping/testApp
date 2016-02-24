@@ -50,12 +50,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.verification', {
+      url: '/verification',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-verification': {
+          templateUrl: 'templates/tab-verification.html',
+          controller: 'VerificationCtrl'
         }
       }
     })
@@ -69,12 +69,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.report', {
+    url: '/report',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-report': {
+        templateUrl: 'templates/tab-report.html',
+        controller: 'ReportCtrl'
+      }
+    }
+  })
+
+  .state('tab.my', {
+    url: '/my',
+    views: {
+      'tab-my': {
+        templateUrl: 'templates/tab-my.html',
+        controller: 'MyCtrl'
       }
     }
   });

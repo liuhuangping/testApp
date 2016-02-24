@@ -9,7 +9,16 @@ body{
   background-color:#C60019;
   color:#fff;
   background-image:none;
+  border-style:none;
 }
+.bar-red-second{
+  background-color:#C60019;
+  color:#fff;
+  background-image:none;
+  border-style:none;
+  border-bottom:1px solid #ae000a;
+}
+
 .position-r{
   position:relative;
 }
@@ -22,6 +31,14 @@ body{
   border-width:0;
   margin-right:5px;
 }
+.button-set{
+  width:24px;
+  height:24px;
+  background:url(../img/yanzheng06@2x.png) no-repeat center center;
+  background-size:24px;
+  border-width:0;
+  margin-left:5px;
+}
 .con-top{
   width:100%;
   height:180px;
@@ -30,9 +47,39 @@ body{
   text-align:center;
   position:relative;
 }
+.con-top-second{
+  width:100%;
+  height:150px;
+  background:#C60019;
+  text-align:center;
+  position:relative;
+  border-top:1px solid #C70013;
+}
 .con-top-logo{
   width:110px;
   height:110px;
+
+}
+.con-top-logo-second{
+  width:110px;
+  height:110px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-55px;
+  margin-top:-55px;
+}
+.con-logo-box a.activated{
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-55px;
+  margin-top:-55px;
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  display:inline-block;
+  box-shadow:0 0 10px rgba(255,0,21,1);
 }
 .logo-font{
   margin-top:5px;
@@ -40,7 +87,8 @@ body{
   font-family:"Microsoft YaHei";
 }
 .logo-sub-font{
-  width:70%;
+  width:220px;
+  max-width:280px;
   height:auto;
 }
 .font-white{
@@ -133,4 +181,112 @@ body{
 .tabs-bg .tabs{
   background:#fff;
   border-top:1px solid #ededed !important;
+}
+
+.tab-item .ion-home{
+  background:url(../img/home@2x.png) no-repeat center center;
+  background-size:32px;
+}
+
+.tab-item .ion-home-strong{
+  background:url(../img/home@2x-s.png) no-repeat center center;
+  background-size:32px;
+}
+.ion-yz{
+  background:url(../img/code@2x.png) no-repeat center center;
+  background-size:32px;
+}
+.ion-yz-strong{
+  background:url(../img/code@2x-s.png) no-repeat center center;
+  background-size:32px;
+}
+.ion-jb{
+  background:url(../img/jubao@2x.png) no-repeat center center;
+  background-size:32px;
+}
+.ion-jb-strong{
+  background:url(../img/jubao@2x-s.png) no-repeat center center;
+  background-size:32px;
+}
+.ion-my{
+  background:url(../img/my@2x.png) no-repeat center center;
+  background-size:32px;
+}
+.ion-my-strong{
+  background:url(../img/my@2x-select.png) no-repeat center center;
+  background-size:32px;
+}
+.ion-home::before,.ion-yz::before,.ion-jb::before,.ion-my::before {
+  content: ""
+}
+ion-tabs .tab-item.tab-item-active, ion-tabs .tab-item.active, ion-tabs .tab-item.activated{
+  color:#CA0019;
+}
+.no-border{
+  border-width:0;
+}
+.item-select .yz-select{
+  width:100%;
+  padding-left:10px;
+  height:47px;
+  direction:ltr;
+  max-width:100%;
+  color:#666;
+}
+.item-select .yz-select option{
+  border-bottom:1px solid #ededed;
+  line-height:30px;
+  padding:5px 0;
+}
+
+input::-webkit-input-placeholder {
+  color: #666 !important;
+}
+input:-moz-placeholder {
+　color: #666 !important;
+}
+input::-moz-placeholder {
+　color: #666 !important;
+}
+input:-ms-input-placeholder {
+　color: #666 !important;
+}
+input[type=text]{
+  color:#666;
+}
+.item-select:after{
+  width: 24px;
+  height: 24px;
+  background: url(../img/yanzheng03@2x.png) center center no-repeat;
+  background-size: 24px;
+  margin-top: -12px;
+  border:0;
+}
+.button-assertive{
+  width:100%;
+}
+.button-orange{
+  background:#FF9600;
+  color:#fff !important;
+  width:100%;
+}
+.button-orange.activated{
+  background: #fb8c00;
+  color:#fff !important;
+  width:100%;
+}
+.bar .button.activated{
+  background-color:transparent !important;
+  opacity:.9;
+}
+
+.pp-ion{
+  background:url(../img/yanzheng01@2x.png) no-repeat 10px center;
+  background-size:32px;
+  padding-left:50px;
+}
+.item-select .lb-ion{
+  background:url(../img/yanzheng02@2x.png) no-repeat 10px center #fff;
+  background-size:32px;
+  padding-left:50px;
 }

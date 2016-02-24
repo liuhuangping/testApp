@@ -20,9 +20,20 @@ angular.module('starter.controllers', [])
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
+  .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+    $scope.chat = angular.element('#myElement')
+  })
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
   };
-});
+})
+
+.controller('myCtrl', ['$scope', function($scope) {
+  $scope.myFunc = function() {
+    return {color:'#333'};
+  };
+}]);
+
+

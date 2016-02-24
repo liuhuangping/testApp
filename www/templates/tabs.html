@@ -4,22 +4,26 @@ Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
 
-<ion-tabs class="tabs-icon-top tabs-color-active-positive tabs-bg">
+<ion-tabs class="tabs-icon-top tabs-bg">
 
-  <!-- Dashboard Tab -->
-  <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
+  <!-- 主页 -->
+  <ion-tab title="主页" icon-off="ion-home" icon-on="ion-home-strong" href="#/tab/dash">
     <ion-nav-view name="tab-dash"></ion-nav-view>
   </ion-tab>
 
-  <!-- Chats Tab -->
-  <ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
-    <ion-nav-view name="tab-chats"></ion-nav-view>
+  <!-- 验证 -->
+  <ion-tab title="验证" icon-off="ion-yz" icon-on="ion-yz-strong" href="#/tab/verification">
+    <ion-nav-view name="tab-verification"></ion-nav-view>
   </ion-tab>
 
-  <!-- Account Tab -->
-  <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
-    <ion-nav-view name="tab-account"></ion-nav-view>
+  <!-- 举报 -->
+  <ion-tab title="举报" icon-off="ion-jb" icon-on="ion-jb-strong" href="#/tab/report">
+    <ion-nav-view name="tab-report"></ion-nav-view>
   </ion-tab>
 
+  <!-- 我的 -->
+  <ion-tab title="我的" icon-off="ion-my" icon-on="ion-my-strong" href="#/tab/my">
+    <ion-nav-view name="tab-my"></ion-nav-view>
+  </ion-tab>
 
 </ion-tabs>
