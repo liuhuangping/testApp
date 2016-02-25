@@ -1,0 +1,47 @@
+<ion-view view-title="Dashboard" class="view">
+
+  <ion-content class="no-padding">
+    <ion-header-bar class="bar-red position-r">
+      <h1 class="title"></h1>
+      <div class="buttons">
+        <a href="#/tab/rules">
+          <button class="button button-information"></button>
+        </a>
+
+      </div>
+    </ion-header-bar>
+    <div class="con-top">
+      <div class="con-logo-box">
+        <img ng-src="img/logo@2x.png" class="con-top-logo"/>
+        <p class="logo-font font-white">一道打假</p>
+        <img ng-src="img/title.png" class="logo-sub-font"/>
+      </div>
+    </div>
+    <div class="list" ng-controller="getList1">
+      <a class="item icon-local" href="#" ng-repeat="item in lists">
+        <p>
+          <span class="list-title">{{item.title}}</span>
+          <span class="list-date">{{item.time}} {{item.editor}}</span>
+        </p>
+        <p class="list-sub-title">{{item.subTitle}}</p>
+      </a>
+    </div>
+    <div class="list list2" ng-controller="getList2">
+      <a class="item icon-info" href="#" ng-repeat="item in lists">
+        <p>
+          <span class="list-title">{{item.title}}</span>
+          <span class="list-date">{{item.time}}</span>
+        </p>
+      </a>
+    </div>
+    <ul class="list jb-list" ng-controller="getList3">
+      <li ng-repeat="li in lists">
+        <span class="cirle">￥{{li.money}}</span><br />
+        <span class="jb-title">{{li.name}}举报</span><br />
+        <span class="jb-sub-title">{{li.des}}获得{{li.money}}元奖励</span>
+      </li>
+      <div class="clear"></div>
+    </ul>
+  </ion-content>
+  <div class="clear"></div>
+</ion-view>

@@ -1,0 +1,19 @@
+<ion-view class="view" view-title="">
+  <ion-content class="no-padding" >
+    <ion-header-bar class="bar-red position-r">
+      <a class="button button-icon icon ion-android-close font-white" href="#/tab/verification"></a>
+      <h1 class="title font-white">一道打假</h1>
+      <a class="button button-icon icon ion-android-done font-white"  ng-click="openModal(newCode)"></a>
+    </ion-header-bar>
+    <ion-list>
+      <form ng-app="" name="myCode" ng-init="">
+        <label class="item item-input no-border code-ion">
+          <input type="text" placeholder="请输入验证码" ng-model="newCode.text"/>
+        </label>
+      </form>
+      <div ng-repeat="codeItem in code">
+      {{codeItem.text}}
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

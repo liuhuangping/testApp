@@ -125,10 +125,17 @@ body{
   border-top:1px solid #ededed;
 }
 .list2 .item .list-title{
+  float:left;
   font-size:14px;
   color:#333;
-  line-height:30px;
+  line-height:35px;
   padding:0;
+}
+.list2 .item .list-date{
+  line-height:35px;
+  float:right;
+  font-size:11px;
+  color:#999;
 }
 .item .list-sub-title{
   font-size:0.65em;
@@ -265,6 +272,9 @@ input[type=text]{
 .button-assertive{
   width:100%;
 }
+a.button-assertive,a.button-orange{
+  line-height:47px;
+}
 .button-orange{
   background:#FF9600;
   color:#fff !important;
@@ -289,4 +299,28 @@ input[type=text]{
   background:url(../img/yanzheng02@2x.png) no-repeat 10px center #fff;
   background-size:32px;
   padding-left:50px;
+}
+
+.icon-arrow{
+  position:absolute;
+  right:10px;
+  color:#D6D6D6;
+  font-size:20px;
+}
+.code-ion{
+  background:url(../img/code@2x.png) no-repeat 10px center;
+  background-size:32px;
+  padding-left:50px;
+}
+.button-icon:hover{
+  opacity:.9;
+  color:#fff;
+}
+.modal{
+  width:90%;
+  min-height:50%;
+  margin:25% 5%;
+}
+.modal-backdrop.active{
+  background:rgba(0,0,0,.5);
 }

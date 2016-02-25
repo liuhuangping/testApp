@@ -1,0 +1,26 @@
+<ion-view view-title="ruls" class="view">
+
+  <ion-content class="no-padding">
+    <ion-header-bar class="bar-red position-r">
+      <a class="button button-icon icon ion-ios-arrow-left font-white" href="#/tab/home"></a>
+      <h1 class="title"></h1>
+    </ion-header-bar>
+    <div class="con-top">
+      <div class="con-logo-box">
+        <img src="img/logo@2x.png" class="con-top-logo"/>
+        <p class="logo-font font-white">一道打假</p>
+        <img src="img/title.png" class="logo-sub-font"/>
+      </div>
+    </div>
+    <div class="list no-border">
+      <a class="item" ng-repeat="rule in rules" href="#/tab/rules/{{rule.id}}">
+        <p>
+          <span class="list-title">{{rule.title}}</span>
+          <i class="icon ion-ios-arrow-right icon-arrow"></i>
+        </p>
+        <ion-nav-view name="rules-detail"></ion-nav-view>
+      </a>
+    </div>
+  </ion-content>
+
+</ion-view>

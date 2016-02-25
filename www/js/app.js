@@ -40,41 +40,71 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.home', {
+    url: '/home',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-home': {
+        templateUrl: 'templates/tab-home.html',
+
+      }
+    }
+  })
+  .state('tab.rules', {
+    url: '/rules',
+    views: {
+      'tab-home': {
+        templateUrl: 'templates/rules.html',
+        controller: 'RulesCtrl'
       }
     }
   })
 
+  .state('tab.rules-detail', {
+    url: '/rules/:rulesId',
+    views: {
+      'tab-home': {
+        templateUrl: 'templates/rules-detail.html',
+        controller: 'RulesDetailCtrl'
+      }
+    }
+
+
+
+  })
   .state('tab.verification', {
       url: '/verification',
       views: {
         'tab-verification': {
           templateUrl: 'templates/tab-verification.html',
-          controller: 'VerificationCtrl'
+          controller:'verificationCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+    .state('tab.verification-writeCode', {
+      url: '/verification-writeCode',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-verification': {
+          templateUrl: 'templates/verification-writeCode.html',
+          controller:'modalCtrl'
         }
       }
     })
+    .state('tab.verification-scansCode', {
+      url: '/verification-scansCode',
+      views: {
+        'tab-verification': {
+          templateUrl: 'templates/verification-scansCode.html'
+        }
+      }
+    })
+
 
   .state('tab.report', {
     url: '/report',
     views: {
       'tab-report': {
         templateUrl: 'templates/tab-report.html',
-        controller: 'ReportCtrl'
+
       }
     }
   })
@@ -84,12 +114,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-my': {
         templateUrl: 'templates/tab-my.html',
-        controller: 'MyCtrl'
+
       }
     }
-  });
+  })
+
+
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/home');
 
-});
+})
