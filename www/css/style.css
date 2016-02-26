@@ -121,7 +121,7 @@ body{
 }
 .list,.list2{
   background:#fff;
-  margin-bottom:5px;
+  margin-bottom:5px !important;
   border-top:1px solid #ededed;
 }
 .list2 .item .list-title{
@@ -323,4 +323,41 @@ a.button-assertive,a.button-orange{
 }
 .modal-backdrop.active{
   background:rgba(0,0,0,.5);
+}
+
+.list .item-list{
+  height:45px;
+  line-height:45px;
+  padding:0 16px;
+}
+.list .item-list .list-title{
+  color:#666 !important;
+}
+.textCon{
+  padding:16px;
+  color:#666;
+}
+.photo{
+  width:64px;
+  height:64px;
+  float:left;
+}
+.photoText{
+  float:left;
+  font-size:14px;
+  color:#333;
+  line-height:64px;
+  margin-left:10px;
+}
+.photoCon{
+  position:absolute;
+  left:50%;
+  margin-left:-65px;
+  max-height:64px;
+}
+.popup-buttons .button-positive{
+  background:#ef473a;
+}
+.popup-buttons .button-positive.activated{
+  background:#E42112;
 }

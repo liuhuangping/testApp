@@ -66,33 +66,34 @@ angular.module('starter.controllers', [])
   $scope.rules = Rules.all();
 })
 .controller('RulesDetailCtrl', function($scope, $stateParams, Rules) {
-  $scope.rule = Rules.get($stateParams.ruleId);
+  $scope.rul = Rules.get($stateParams.ruleId);
 })
 
 //---------------------------modal------------------------------
 
-  .controller('modalCtrl', function($scope, $ionicModal,$state) {
+  .controller('modalCtrl', function($scope, $ionicPopup, $timeout,$state) {
     $scope.code = [
       { text: '' }
     ];
-    $ionicModal.fromTemplateUrl('templates/modal.html', {
-      scope: $scope
-    }).then(function(modal) {
-      $scope.modal = modal;
-    });
-    $scope.closeModal = function(){
-      $scope.modal.hide();
-      $state.go('tab.verification');
-    }
-    $scope.openModal = function(newCode){
-      $scope.modal.show();
+    // An alert dialog
+    $scope.showAlert = function(newCode) {
+      var alertPopup = $ionicPopup.alert({
+        title: '',
+        template: '保存成功 !'
+      });
+        //提交数据
       $scope.code.push({ text: newCode.text});
-      console.log(newCode.text)
-    }
-
+      alertPopup.then(function() {
+        //输出数据
+        console.log(newCode.text);
+        //跳转到验证首页
+        $state.go('tab.verification');
+      });
+    };
   })
 .controller('verificationCtrl', function($scope){
 
 
 })
+
 

@@ -1,9 +1,75 @@
-<ion-view view-title="Account">
+<ion-view view-title="ruls" class="view">
   <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
+    <div class="bar bar-red-second position-r">
+      <button class="button button-set"></button>
+      <div class="title">一道打假</div>
+      <a href="#/tab/rules" class="button button-icon button-information"></a>
+    </div>
+    <ion-list class="list">
+      <label class="item item-input no-border">
+        <input type="text" placeholder="请输入品牌" />
+      </label>
+      <a class="item item-list" href="#">
+        <p>
+          <span class="list-title">请选择产品类别</span>
+          <i class="icon ion-ios-arrow-right icon-arrow"></i>
+        </p>
+        <ion-nav-view name="rules-detail"></ion-nav-view>
+      </a>
+      <label class="item item-input">
+        <input type="text" placeholder="请输入防伪码" />
+      </label>
+      <a class="item item-list" href="#">
+        <p>
+          <span class="list-title">请选择验证结果</span>
+          <i class="icon ion-ios-arrow-right icon-arrow"></i>
+        </p>
+        <ion-nav-view name="rules-detail"></ion-nav-view>
+      </a>
+      <a class="item item-list" href="#">
+        <p>
+          <span class="list-title">请选择省份</span>
+          <i class="icon ion-ios-arrow-right icon-arrow"></i>
+        </p>
+        <ion-nav-view name="rules-detail"></ion-nav-view>
+      </a>
+      <a class="item item-list" href="#">
+        <p>
+          <span class="list-title">请选择城市</span>
+          <i class="icon ion-ios-arrow-right icon-arrow"></i>
+        </p>
+        <ion-nav-view name="rules-detail"></ion-nav-view>
+      </a>
+      <a class="item item-list" href="#">
+        <p>
+          <span class="list-title">请选择区县</span>
+          <i class="icon ion-ios-arrow-right icon-arrow"></i>
+        </p>
+        <ion-nav-view name="rules-detail"></ion-nav-view>
+      </a>
+      <label class="item item-input">
+        <input type="text" placeholder="请输入具体地址" />
+      </label>
+      <label class="item item-input">
+        <textarea type="text" placeholder="具体情况描述，不超过100字" rows="3"></textarea>
+      </label>
     </ion-list>
+    <div class="clear"></div>
+    <ul class="list jb-list">
+        <li style="width:50%;height:64px;" class="position-r">
+          <button class="photoCon button-clear">
+           <img ng-src="img/photo1.png" class="photo"/>
+           <span class="photoText">物品拍照</span>
+          </button>
+        </li>
+        <li style="width:50%;height:64px;" class="position-r">
+          <button class="photoCon button-clear">
+            <img ng-src="img/photo2.png" class="photo"/>
+            <span class="photoText">发票拍照</span>
+          </button>
+        </li>
+
+      <div class="clear"></div>
+    </ul>
   </ion-content>
 </ion-view>
