@@ -1,9 +1,9 @@
 <ion-modal-view>
-  <ion-header-bar class="bar bar-header bar-red">
+  <ion-header-bar class="bar bar-header bar-gray">
     <h1 class="title"></h1>
-    <button class="button button-clear button-primary" ng-click="closeModal()"><i class="icon ion-android-close  font-white"></i></button>
+    <button class="button button-clear button-primary" ng-click="modal.hide()"><i class="icon ion-android-close"></i></button>
   </ion-header-bar>
-  <ion-content class="padding">
-   <p>保存成功！</p>
+  <ion-content class="" ng-controller="typeCtrl">
+    <ion-radio icon="ion-ios-circle-filled" ng-model="choice" ng-value="'{{type.value}}'" ng-repeat="type in types">{{type.content}}</ion-radio>
   </ion-content>
 </ion-modal-view>

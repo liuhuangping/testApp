@@ -32,5 +32,37 @@ angular.module('starter.services', [])
     }
   };
 })
+    .factory('Types', function() {
+      // Might use a resource here that returns a JSON array
+
+      // Some fake testing data
+      var types = [{
+        id: 0,
+        value:'宝洁',
+        content:'宝洁'
+      }, {
+        id: 1,
+        value:'茅台',
+        content:'茅台'
+      }, {
+        id: 2,
+        value:'高洁',
+        content:'高洁'
+      }];
+
+      return {
+        all: function() {
+          return types;
+        },
+        get: function(ruleId) {
+          for (var i = 0; i < rules.length; i++) {
+            if (rules[i].id === parseInt(ruleId)) {
+              return rules[i];
+            }
+          }
+          return null;
+        }
+      };
+    })
 
 

@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ionic','ngCordova'])
 
 .controller('getList1',function($scope){
   $scope.lists = [
@@ -69,7 +69,7 @@ angular.module('starter.controllers', [])
   $scope.rul = Rules.get($stateParams.ruleId);
 })
 
-//---------------------------modal------------------------------
+//---------------------------alert------------------------------
 
   .controller('modalCtrl', function($scope, $ionicPopup, $timeout,$state) {
     $scope.code = [
@@ -96,4 +96,40 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('reportCtrl', function($scope, $ionicModal) {
 
+  $scope.contacts = [
+    { name: 'Gordon Freeman' },
+    { name: 'Barney Calhoun' },
+    { name: 'Lamarr the Headcrab' },
+  ];
+
+  $ionicModal.fromTemplateUrl('templates/modal.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.createContact = function(u) {
+    $scope.contacts.push({ name: u.firstName + ' ' + u.lastName });
+    $scope.modal.hide();
+  };
+
+})
+.controller('typeCtrl', function($scope, Types) {
+  $scope.types = Types.all();
+})
+
+
+.controller('scansCodeCtrl',function($scope, $cordovaBarcodeScanner ){
+  $scope.scanBarcode = function() {
+    $cordovaBarcodeScanner.scan().then(function(imageData) {
+      alert(imageData.text);
+      console.log("Barcode Format -> " + imageData.format);
+      console.log("Cancelled -> " + imageData.cancelled);
+    }, function(error) {
+      console.log("An error happened -> " + error);
+    });
+  };
+
+})

@@ -23,14 +23,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
-  $stateProvider
 
+
+  //配置$ionicConfigProvider使tabs导航在底部
+  $ionicConfigProvider.platform.android.tabs.style('standard');
+  $ionicConfigProvider.platform.android.tabs.position('bottom');
+  $ionicConfigProvider.platform.ios.tabs.style('standard');
+  $ionicConfigProvider.platform.ios.tabs.position('bottom');
+
+
+  $stateProvider
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
@@ -93,7 +101,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/verification-scansCode',
       views: {
         'tab-verification': {
-          templateUrl: 'templates/verification-scansCode.html'
+          templateUrl: 'templates/verification-scansCode.html',
+          controller:'scansCodeCtrl'
         }
       }
     })
@@ -104,7 +113,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-report': {
         templateUrl: 'templates/tab-report.html',
-
+        controller:'reportCtrl'
       }
     }
   })
@@ -118,6 +127,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+      .state('tab.my-messages', {
+        url: '/my-messages',
+        views: {
+          'tab-my': {
+            templateUrl: 'templates/my-messages.html'
+
+          }
+        }
+      })
 
 
   // if none of the above states are matched, use this as the fallback
