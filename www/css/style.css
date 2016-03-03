@@ -370,8 +370,8 @@ a.button-assertive,a.button-orange{
   color:#666;
 }
 .photo{
-  width:64px;
-  height:64px;
+  width:56px;
+  height:56px;
   float:left;
 }
 .photoText{
@@ -384,7 +384,7 @@ a.button-assertive,a.button-orange{
 .photoCon{
   position:absolute;
   left:50%;
-  margin-left:-65px;
+  margin-left:-74px;
   max-height:64px;
 }
 .popup-buttons .button-positive{
@@ -464,4 +464,9 @@ a.button-assertive,a.button-orange{
 }
 .bindBankCard.modal{
   min-height:60%;
+}
+
+.report-type .item-content{
+  background:url(../img/radio@2x.png) no-repeat right 12px center;
+  background-size:18px;
 }

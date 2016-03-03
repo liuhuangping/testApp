@@ -9,7 +9,7 @@
       <label class="item item-input no-border">
         <input type="text" placeholder="请输入品牌" />
       </label>
-      <a class="item item-list" ng-click="modal.show()">
+      <a class="item item-list" ng-click="openModal(1)">
         <p>
           <span class="list-title">请选择产品类别</span>
           <i class="icon ion-ios-arrow-right icon-arrow"></i>
@@ -19,28 +19,28 @@
       <label class="item item-input">
         <input type="text" placeholder="请输入防伪码" />
       </label>
-      <a class="item item-list" href="#">
+      <a class="item item-list" href="#"  ng-click="openModal(2)">
         <p>
           <span class="list-title">请选择验证结果</span>
           <i class="icon ion-ios-arrow-right icon-arrow"></i>
         </p>
         <ion-nav-view name="rules-detail"></ion-nav-view>
       </a>
-      <a class="item item-list" href="#">
+      <a class="item item-list" href="#"  ng-click="openModal(3)">
         <p>
           <span class="list-title">请选择省份</span>
           <i class="icon ion-ios-arrow-right icon-arrow"></i>
         </p>
         <ion-nav-view name="rules-detail"></ion-nav-view>
       </a>
-      <a class="item item-list" href="#">
+      <a class="item item-list" href="#" ng-click="openModal(4)">
         <p>
           <span class="list-title">请选择城市</span>
           <i class="icon ion-ios-arrow-right icon-arrow"></i>
         </p>
         <ion-nav-view name="rules-detail"></ion-nav-view>
       </a>
-      <a class="item item-list" href="#">
+      <a class="item item-list" href="#"  ng-click="openModal(5)">
         <p>
           <span class="list-title">请选择区县</span>
           <i class="icon ion-ios-arrow-right icon-arrow"></i>
@@ -71,5 +71,11 @@
 
       <div class="clear"></div>
     </ul>
+    <div class="padding">
+      <button class="button button-balanced button-block" href="#">
+        提交
+      </button>
+    </div>
+
   </ion-content>
 </ion-view>

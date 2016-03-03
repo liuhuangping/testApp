@@ -96,12 +96,61 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
 
 })
 
-.controller('reportCtrl', function($scope, $ionicModal) {
-  $ionicModal.fromTemplateUrl('templates/modal.html', {
+.controller('reportCtrl', function($scope, $ionicModal,Provinces) {
+  $scope.provinces = Provinces.all();
+
+  // Modal 1
+  $ionicModal.fromTemplateUrl('templates/reoprt-modal/report-types-modal.html', {
+    id: '1', // We need to use and ID to identify the modal that is firing the event!
     scope: $scope
   }).then(function(modal) {
-    $scope.modal = modal;
+    $scope.oModal1 = modal;
   });
+  // Modal 2
+  $ionicModal.fromTemplateUrl('templates/reoprt-modal/report-result-modal.html', {
+    id: '2', // We need to use and ID to identify the modal that is firing the event!
+    scope: $scope
+  }).then(function(modal) {
+    $scope.oModal2 = modal;
+  });
+  // Modal 3
+  $ionicModal.fromTemplateUrl('templates/reoprt-modal/report-provinces-modal.html', {
+    id: '3', // We need to use and ID to identify the modal that is firing the event!
+    scope: $scope
+  }).then(function(modal) {
+    $scope.oModal3 = modal;
+  });
+  // Modal 4
+  $ionicModal.fromTemplateUrl('templates/reoprt-modal/report-citys-modal.html', {
+    id: '4', // We need to use and ID to identify the modal that is firing the event!
+    scope: $scope
+  }).then(function(modal) {
+    $scope.oModal4 = modal;
+  });
+  // Modal 5
+  $ionicModal.fromTemplateUrl('templates/reoprt-modal/report-area-modal.html', {
+    id: '5', // We need to use and ID to identify the modal that is firing the event!
+    scope: $scope
+  }).then(function(modal) {
+    $scope.oModal5 = modal;
+  });
+
+
+  //----------------------------------
+  $scope.openModal = function(index) {
+    if (index){
+      var oModal = 'oModal'+index
+      $scope[oModal].show();
+    }
+  };
+
+  $scope.closeModal = function(index) {
+    if (index){
+      var oModal = 'oModal'+index
+      $scope[oModal].hide();
+    }
+  };
+
 
 })
 .controller('typeCtrl', function($scope, Types) {
@@ -177,9 +226,7 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
         // Modal 1
         $ionicModal.fromTemplateUrl('templates/my-modal/my-verification-modal.html', {
           id: '1', // We need to use and ID to identify the modal that is firing the event!
-          scope: $scope,
-          backdropClickToClose: false,
-          animation: 'slide-in-up'
+          scope: $scope
         }).then(function(modal) {
           $scope.oModal1 = modal;
         });
@@ -187,18 +234,14 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
         // Modal 2
         $ionicModal.fromTemplateUrl('templates/my-modal/my-report-modal.html', {
           id: '2', // We need to use and ID to identify the modal that is firing the event!
-          scope: $scope,
-          backdropClickToClose: false,
-          animation: 'slide-in-up'
+          scope: $scope
         }).then(function(modal) {
           $scope.oModal2 = modal;
         });
         // Modal 3
         $ionicModal.fromTemplateUrl('templates/my-modal/my-bindBankCard-modal.html', {
           id: '3', // We need to use and ID to identify the modal that is firing the event!
-          scope: $scope,
-          backdropClickToClose: false,
-          animation: 'slide-in-up'
+          scope: $scope
         }).then(function(modal) {
           $scope.oModal3 = modal;
         });
@@ -206,27 +249,21 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
         // Modal 4
         $ionicModal.fromTemplateUrl('templates/my-modal/my-changePassword-modal.html', {
           id: '4', // We need to use and ID to identify the modal that is firing the event!
-          scope: $scope,
-          backdropClickToClose: false,
-          animation: 'slide-in-up'
+          scope: $scope
         }).then(function(modal) {
           $scope.oModal4 = modal;
         });
         // Modal 5
         $ionicModal.fromTemplateUrl('templates/my-modal/my-changeName-modal.html', {
           id: '5', // We need to use and ID to identify the modal that is firing the event!
-          scope: $scope,
-          backdropClickToClose: false,
-          animation: 'slide-in-up'
+          scope: $scope
         }).then(function(modal) {
           $scope.oModal5 = modal;
         });
         // Modal 6
         $ionicModal.fromTemplateUrl('templates/my-modal/my-reward-modal.html', {
           id: '6', // We need to use and ID to identify the modal that is firing the event!
-          scope: $scope,
-          backdropClickToClose: false,
-          animation: 'slide-in-up'
+          scope: $scope
         }).then(function(modal) {
           $scope.oModal6 = modal;
         });

@@ -53,14 +53,6 @@ angular.module('starter.services', [])
       return {
         all: function() {
           return types;
-        },
-        get: function(ruleId) {
-          for (var i = 0; i < rules.length; i++) {
-            if (rules[i].id === parseInt(ruleId)) {
-              return rules[i];
-            }
-          }
-          return null;
         }
       };
     })
@@ -75,6 +67,24 @@ angular.module('starter.services', [])
       return {
         all: function () {
           return codes;
+        }
+      }
+    })
+
+    .factory('Provinces', function() {
+      // Might use a resource here that returns a JSON array
+
+      // Some fake testing data
+      var provinces = [{
+        title: '北京'
+      },{
+        title: '河北'
+
+        }]
+
+      return {
+        all: function () {
+          return provinces;
         }
       }
     })
