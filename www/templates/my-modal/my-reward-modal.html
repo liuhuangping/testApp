@@ -1,0 +1,16 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-gray">
+        <h1 class="title"></h1>
+        <button class="button button-clear button-primary" ng-click="closeModal(6)"><i class="icon ion-android-close"></i></button>
+    </ion-header-bar>
+    <ion-content class="">
+        <ion-list class="list">
+            <li class="item item-list no-border" href="#"  ng-if="reportcon.name == '错过车的站台'" ng-repeat="reportcon in reportCons">
+                <p>
+                    <span class="list-title"><span style="font-family: 'Microsoft YaHei'">{{reportcon.date}}</span> 举报{{reportcon.con}}</span>
+                    <span class="list-date-my">{{reportcon.reward}}</span>
+                </p>
+            </li>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

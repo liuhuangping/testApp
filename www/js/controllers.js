@@ -71,10 +71,8 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
 
 //---------------------------alert------------------------------
 
-  .controller('modalCtrl', function($scope, $ionicPopup, $timeout,$state) {
-    $scope.code = [
-      { text: '' }
-    ];
+  .controller('modalCtrl', function($scope, $ionicPopup, $timeout,$state,Codes) {
+    $scope.codes = Codes.all();
     // An alert dialog
     $scope.showAlert = function(newCode) {
       var alertPopup = $ionicPopup.alert({
@@ -82,45 +80,35 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
         template: '保存成功 !'
       });
         //提交数据
-      $scope.code.push({ text: newCode.text});
+      $scope.codes.push({ text: newCode.text});
       alertPopup.then(function() {
         //输出数据
         console.log(newCode.text);
         //跳转到验证首页
         $state.go('tab.verification');
+
       });
     };
   })
-.controller('verificationCtrl', function($scope){
+.controller('verificationCtrl', function($scope,Codes){
+  $scope.codes = Codes.all();
 
 
 })
 
 .controller('reportCtrl', function($scope, $ionicModal) {
-
-  $scope.contacts = [
-    { name: 'Gordon Freeman' },
-    { name: 'Barney Calhoun' },
-    { name: 'Lamarr the Headcrab' },
-  ];
-
   $ionicModal.fromTemplateUrl('templates/modal.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
   });
 
-  $scope.createContact = function(u) {
-    $scope.contacts.push({ name: u.firstName + ' ' + u.lastName });
-    $scope.modal.hide();
-  };
-
 })
 .controller('typeCtrl', function($scope, Types) {
   $scope.types = Types.all();
 })
 
-
+//--------扫码插件 有bug未试通------------
 .controller('scansCodeCtrl',function($scope, $cordovaBarcodeScanner ){
   $scope.scanBarcode = function() {
     $cordovaBarcodeScanner.scan().then(function(imageData) {
@@ -133,3 +121,160 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
   };
 
 })
+
+
+
+
+
+    .controller('myCtrl', ['$scope', '$ionicModal',
+      function($scope, $ionicModal) {
+        $scope.verCons = [
+          {
+            date:'2016-03-11',
+            con:'飘柔洗发水',
+            result:'true'
+          },
+          {
+            date:'2015-11-01',
+            con:'茅台酒',
+            result:'false'
+          },
+          {
+            date:'2014-02-23',
+            con:'周大福钻戒',
+            result:'untested'
+          },
+          {
+            date:'2014-01-22',
+            con:'周大福钻戒',
+            result:'true'
+          }
+
+        ],
+            $scope.reportCons = [
+              {
+                name:'张丽',
+                date: '2016-03-11',
+                con: '飘柔洗发水',
+                num: '1',
+                reward:'已奖励'
+              },
+              {
+                name:'错过车的站台',
+                date: '2016-03-11',
+                con: '茅台',
+                num: '1',
+                reward:'未奖励'
+              },
+              {
+                name:'错过车的站台',
+                date: '2016-03-11',
+                con: '飘柔洗发水',
+                num: '2',
+                reward:'已奖励'
+              }
+            ],
+        // Modal 1
+        $ionicModal.fromTemplateUrl('templates/my-modal/my-verification-modal.html', {
+          id: '1', // We need to use and ID to identify the modal that is firing the event!
+          scope: $scope,
+          backdropClickToClose: false,
+          animation: 'slide-in-up'
+        }).then(function(modal) {
+          $scope.oModal1 = modal;
+        });
+
+        // Modal 2
+        $ionicModal.fromTemplateUrl('templates/my-modal/my-report-modal.html', {
+          id: '2', // We need to use and ID to identify the modal that is firing the event!
+          scope: $scope,
+          backdropClickToClose: false,
+          animation: 'slide-in-up'
+        }).then(function(modal) {
+          $scope.oModal2 = modal;
+        });
+        // Modal 3
+        $ionicModal.fromTemplateUrl('templates/my-modal/my-bindBankCard-modal.html', {
+          id: '3', // We need to use and ID to identify the modal that is firing the event!
+          scope: $scope,
+          backdropClickToClose: false,
+          animation: 'slide-in-up'
+        }).then(function(modal) {
+          $scope.oModal3 = modal;
+        });
+
+        // Modal 4
+        $ionicModal.fromTemplateUrl('templates/my-modal/my-changePassword-modal.html', {
+          id: '4', // We need to use and ID to identify the modal that is firing the event!
+          scope: $scope,
+          backdropClickToClose: false,
+          animation: 'slide-in-up'
+        }).then(function(modal) {
+          $scope.oModal4 = modal;
+        });
+        // Modal 5
+        $ionicModal.fromTemplateUrl('templates/my-modal/my-changeName-modal.html', {
+          id: '5', // We need to use and ID to identify the modal that is firing the event!
+          scope: $scope,
+          backdropClickToClose: false,
+          animation: 'slide-in-up'
+        }).then(function(modal) {
+          $scope.oModal5 = modal;
+        });
+        // Modal 6
+        $ionicModal.fromTemplateUrl('templates/my-modal/my-reward-modal.html', {
+          id: '6', // We need to use and ID to identify the modal that is firing the event!
+          scope: $scope,
+          backdropClickToClose: false,
+          animation: 'slide-in-up'
+        }).then(function(modal) {
+          $scope.oModal6 = modal;
+        });
+
+
+        //----------------------------------
+        $scope.openModal = function(index) {
+          if (index){
+            var oModal = 'oModal'+index
+            $scope[oModal].show();
+          }
+        };
+
+        $scope.closeModal = function(index) {
+          if (index){
+            var oModal = 'oModal'+index
+            $scope[oModal].hide();
+          }
+        };
+
+        /* Listen for broadcasted messages */
+        //==============================================
+
+
+
+
+        $scope.$on('modal.hidden', function(event, modal) {
+          console.log('Modal ' + modal.id + ' is hidden!');
+        });
+
+        // Cleanup the modals when we're done with them (i.e: state change)
+        // Angular will broadcast a $destroy event just before tearing down a scope
+        // and removing the scope from its parent.
+        $scope.$on('$destroy', function() {
+          console.log('Destroying modals...');
+          $scope.oModal1.remove();
+          $scope.oModal2.remove();
+          $scope.oModal3.remove();
+          $scope.oModal4.remove();
+        });
+      }
+
+    ])
+
+
+
+
+
+
+
+

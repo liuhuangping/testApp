@@ -41,8 +41,12 @@
       <div class="col">
         <a class="button button-orange" href="#/tab/verification-writeCode">
           输入验证码
+          <span ng-repeat="itemcode in codes">
+            <span ng-if="itemcode.text != ''">
+            {{itemcode.text}}
+            </span>
+          </span>
         </a>
-
       </div>
 
     </div>

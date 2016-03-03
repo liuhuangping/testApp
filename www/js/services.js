@@ -64,5 +64,18 @@ angular.module('starter.services', [])
         }
       };
     })
+    .factory('Codes', function() {
+      // Might use a resource here that returns a JSON array
 
+      // Some fake testing data
+      var codes = [{
+        text: ''
+      }];
+
+      return {
+        all: function () {
+          return codes;
+        }
+      }
+    })
 

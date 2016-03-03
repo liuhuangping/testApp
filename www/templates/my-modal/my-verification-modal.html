@@ -1,0 +1,24 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-gray">
+        <h1 class="title"></h1>
+        <button class="button button-clear button-primary" ng-click="closeModal(1)"><i class="icon ion-android-close"></i></button>
+    </ion-header-bar>
+    <ion-content class="">
+        <ion-list class="list">
+            <li class="item item-list no-border" href="#" ng-repeat="vercon in verCons">
+                <p ng-if="vercon.result == 'true'">
+                    <span class="list-title"><span style="font-family: 'Microsoft YaHei'">{{vercon.date}}</span> {{vercon.con}}</span>
+                    <span class="list-date-my"><span class="verTrue">真</span></span>
+                </p>
+                <p ng-if="vercon.result == 'false'">
+                    <span class="list-title">{{vercon.date}} {{vercon.con}}</span>
+                    <span class="list-date-my"><span class="verFalse">假</span></span>
+                </p>
+                <p ng-if="vercon.result == 'untested'">
+                    <span class="list-title">{{vercon.date}} {{vercon.con}}</span>
+                    <span class="list-date-my"><span class="verUntested">待验</span></span>
+                </p>
+            </li>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

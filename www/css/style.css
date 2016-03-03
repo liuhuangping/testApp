@@ -17,6 +17,11 @@ body{
   background-image:none;
   border-style:none;
 }
+.modal .bar-header{
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  left:-1px;
+}
 .bar-red-second{
   background-color:#C60019;
   color:#fff;
@@ -299,6 +304,18 @@ a.button-assertive,a.button-orange{
   color:#fff !important;
   width:100%;
 }
+.button-blank-red{
+  background:#fff;
+  border:2px solid #EE4A4B;
+  color:#EE4A4B !important;
+  width:100%;
+}
+.button-blank-red.activated{
+  background: #fff;
+  border:2px solid #ee8883;
+  color:#ee8883 !important;
+  width:100%;
+}
 .bar .button.activated{
   background-color:transparent !important;
   opacity:.9;
@@ -414,4 +431,37 @@ a.button-assertive,a.button-orange{
   line-height:16px;
   max-width:150px;
 
+}
+.verTrue{
+  background:#54C957;
+  height:20px;
+  border-radius:12px;
+  padding:2px 5px;
+  color:#fff;
+}
+.verFalse{
+  background:#EE4A4B;
+  height:20px;
+  border-radius:12px;
+  padding:2px 5px;
+  color:#fff;
+}
+.verUntested{
+  background:#A4A4A4;
+  height:20px;
+  border-radius:12px;
+  padding:2px 5px;
+  color:#fff;
+}
+.font-red{
+  color:#EE4A4B;
+}
+.mt-10{
+  margin-top:10px !important;
+}
+.mb-10{
+  margin-bottom:10px !important;
+}
+.bindBankCard.modal{
+  min-height:60%;
 }

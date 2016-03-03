@@ -123,7 +123,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-my': {
         templateUrl: 'templates/tab-my.html',
-
+        controller:'myCtrl'
       }
     }
   })
@@ -132,7 +132,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         views: {
           'tab-my': {
             templateUrl: 'templates/my-messages.html'
-
+          }
+        }
+      })
+      .state('tab.myVerModal', {
+        url: '/my-myVerModal',
+        views: {
+          'tab-my': {
+            templateUrl: 'templates/my-modal/my-verification-modal.html'
           }
         }
       })
